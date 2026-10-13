@@ -42,7 +42,10 @@ jobs:
           context: .
           build_args: ""
 
+      
       - name: Print image URI
         env:
           IMAGE_URI: ${{ steps.build.outputs.image_uri }}
-        run: echo "Pushed image: $IMAGE_URI"
+        run: |
+          echo "Pushed image: $IMAGE_URI"
+
