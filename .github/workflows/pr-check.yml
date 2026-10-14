@@ -1,0 +1,15 @@
+
+name: PR Infrastructure Check
+
+on:
+  pull_request:
+    paths:
+      - "infra/**"
+      - ".github/workflows/infra-check.yml"
+      - ".github/workflows/pr-check.yml"
+
+jobs:
+  infra-check:
+    uses: ./.github/workflows/infra-check.yml
+    with:
+      working_dir: infra
